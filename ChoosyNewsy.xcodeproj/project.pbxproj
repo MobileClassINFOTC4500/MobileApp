@@ -15,6 +15,7 @@
 		5316CCB01ADC8EBD00E65D92 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5316CCAF1ADC8EBD00E65D92 /* HomeViewController.swift */; };
 		B7EA55601AE06C4600A4EBDA /* RSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EA555F1AE06C4600A4EBDA /* RSSParser.swift */; };
 		B7EA55621AE0743C00A4EBDA /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EA55611AE0743C00A4EBDA /* WebViewViewController.swift */; };
+		B7EA55641AE0750100A4EBDA /* RSSFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EA55631AE0750100A4EBDA /* RSSFeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		5316CCAF1ADC8EBD00E65D92 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B7EA555F1AE06C4600A4EBDA /* RSSParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSParser.swift; sourceTree = "<group>"; };
 		B7EA55611AE0743C00A4EBDA /* WebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
+		B7EA55631AE0750100A4EBDA /* RSSFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSFeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				5316CCAF1ADC8EBD00E65D92 /* HomeViewController.swift */,
 				B7EA555F1AE06C4600A4EBDA /* RSSParser.swift */,
 				B7EA55611AE0743C00A4EBDA /* WebViewViewController.swift */,
+				B7EA55631AE0750100A4EBDA /* RSSFeedViewController.swift */,
 			);
 			path = ChoosyNewsy;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				5316CC901ADC8E1800E65D92 /* AppDelegate.swift in Sources */,
 				B7EA55601AE06C4600A4EBDA /* RSSParser.swift in Sources */,
 				B7EA55621AE0743C00A4EBDA /* WebViewViewController.swift in Sources */,
+				B7EA55641AE0750100A4EBDA /* RSSFeedViewController.swift in Sources */,
 				5316CCB01ADC8EBD00E65D92 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
