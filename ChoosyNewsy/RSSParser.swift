@@ -40,7 +40,7 @@ class RSSParser: NSObject, NSXMLParserDelegate {
     
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [NSObject : AnyObject]) {
         
-        if(element as NSString).isEqualToString("item") {
+        if(element as NSString).isEqualToString("item") { //can change "item" to necessary attribute
             elements = NSMutableDictionary.alloc()
             elements = [:]
             feedTitle = NSMutableString()
@@ -55,9 +55,9 @@ class RSSParser: NSObject, NSXMLParserDelegate {
         
         func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
             
-            if (elementName as NSString).isEqualToString("item") {
+            if (elementName as NSString).isEqualToString("item") { //again, can change
                 if feedTitle != "" {
-                    elements.setObject(feedTitle, forKey: "title")
+                    elements.setObject(feedTitle, forKey: "title") //title, headline, etc.
                 }
             }
             
@@ -66,32 +66,32 @@ class RSSParser: NSObject, NSXMLParserDelegate {
             }
             
             if feedDescription != "" {
-                elements.setObject(feedDescription, forKey: "description")
+                elements.setObject(feedDescription, forKey: "description") //desc., excerpt, etc.
             }
             
             if feedDate != "" {
-                elements.setObject(feedDate, forKey: "date")
+                elements.setObject(feedDate, forKey: "date") //probably won't change
             }
             
             feed.addObject(elements)
             
         }
         
-        func parser(parser: NSXMLParser, foundCharacters string: String?) {
+        func parser(parser: NSXMLParser, foundCharacters string: String?) { //not sure why this is conflicting right now
             
-            if element.isEqualToString("title") {
+            if element.isEqualToString("title") { //same
                 feedTitle.appendString(string!)
             }
             
-            else if element.isEqualToString("link") {
+            else if element.isEqualToString("link") { //same
                 url.appendString(string!)
             }
             
-            else if element.isEqualToString("description") {
+            else if element.isEqualToString("description") { //same
                 feedDescription.appendString(string!)
             }
             
-            else if element.isEqualToString("date") {
+            else if element.isEqualToString("date") { //same
                 feedDate.appendString(string!)
             }
         }

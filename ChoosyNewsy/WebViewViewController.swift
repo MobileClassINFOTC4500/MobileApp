@@ -10,9 +10,9 @@ import UIKit
 
 class WebViewViewController: UIViewController {
 
-    var url = ""
+    var url = "" //Initially set URL to empty string
     
-    //missing IBOutlet (create later obviously)
+    //missing IBOutlet (create later obviously) Use this name in the viewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
