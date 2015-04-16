@@ -24,7 +24,7 @@ class RSSParser: NSObject, NSXMLParserDelegate {
         return self
     }
     
-    func beginParse (url :NSURL) -> AnyObject {
+    func beginParse (url :NSURL) {
         feed = []
         parser = NSXMLParser(contentsOfURL: url)!
         parser.delegate = self
@@ -32,6 +32,7 @@ class RSSParser: NSObject, NSXMLParserDelegate {
         parser.shouldReportNamespacePrefixes = false
         parser.shouldResolveExternalEntities = false
         parser.parse()
+    
     }
     
     func RSSFeeds() -> NSMutableArray {
@@ -52,6 +53,7 @@ class RSSParser: NSObject, NSXMLParserDelegate {
             feedDate = NSMutableString.alloc()
             feedDate = ""
         }
+    }
         
         func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
             
@@ -75,28 +77,24 @@ class RSSParser: NSObject, NSXMLParserDelegate {
             
             feed.addObject(elements)
             
-        }
-        
-        func parser(parser: NSXMLParser, foundCharacters string: String?) { //not sure why this is conflicting right now
-            
-            if element.isEqualToString("title") { //same
-                feedTitle.appendString(string!)
-            }
-            
-            else if element.isEqualToString("link") { //same
-                url.appendString(string!)
-            }
-            
-            else if element.isEqualToString("description") { //same
-                feedDescription.appendString(string!)
-            }
-            
-            else if element.isEqualToString("date") { //same
-                feedDate.appendString(string!)
-            }
-        }
-        
     }
-    
-    
-}
+
+    func parser(parser: NSXMLParser, foundCharacters string: String?) { //not sure why this is conflicting right now
+        
+        if element.isEqualToString("title") { //same
+            feedTitle.appendString(string!)
+        }
+        
+        else if element.isEqualToString("link") { //same
+            url.appendString(string!)
+        }
+            
+        else if element.isEqualToString("description") { //same
+            feedDescription.appendString(string!)
+        }
+            
+        else if element.isEqualToString("date") { //same
+            feedDate.appendString(string!)
+            }
+        }
+    }
