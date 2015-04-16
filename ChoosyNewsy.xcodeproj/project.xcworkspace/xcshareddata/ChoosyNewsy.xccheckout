@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>83F37926-569D-4547-8264-2B683CA7C5FD</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ChoosyNewsy</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>E5EA096EDB27D99EB2A00782B29D57798058E735</key>
+		<string>https://github.com/MobileClassINFOTC4500/MobileApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ChoosyNewsy.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>E5EA096EDB27D99EB2A00782B29D57798058E735</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/MobileClassINFOTC4500/MobileApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>E5EA096EDB27D99EB2A00782B29D57798058E735</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>E5EA096EDB27D99EB2A00782B29D57798058E735</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MobileApp</string>
+		</dict>
+	</array>
+</dict>
+</plist>
