@@ -7,3 +7,22 @@
 //
 
 import Foundation
+
+class RSSParser: NSOBject, NSXMLParserDelegate {
+    
+    var parse = NSXMLParser()
+    var feed = NSMutableArray()
+    var elements = NSMutableDictionary()
+    var element = NSString()
+    var feedTitle = NSMutableArray()
+    var url = NSMutableString()
+    var feedDescription = NSMutableString()
+    var feedDate = NSMutableString()
+    
+    func initialize (url :NSURL) -> AnyObject {
+        beginParse(url)
+        return self
+    }
+    
+    
+}
