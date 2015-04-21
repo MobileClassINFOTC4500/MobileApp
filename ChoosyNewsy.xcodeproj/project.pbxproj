@@ -13,6 +13,7 @@
 		5316CC9A1ADC8E1800E65D92 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5316CC981ADC8E1800E65D92 /* LaunchScreen.xib */; };
 		5316CCA61ADC8E1800E65D92 /* ChoosyNewsyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5316CCA51ADC8E1800E65D92 /* ChoosyNewsyTests.swift */; };
 		5316CCB01ADC8EBD00E65D92 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5316CCAF1ADC8EBD00E65D92 /* HomeViewController.swift */; };
+		535AC02F1ADD930B000A1679 /* SearchLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AC02E1ADD930B000A1679 /* SearchLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		5316CCA41ADC8E1800E65D92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5316CCA51ADC8E1800E65D92 /* ChoosyNewsyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosyNewsyTests.swift; sourceTree = "<group>"; };
 		5316CCAF1ADC8EBD00E65D92 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		535AC02E1ADD930B000A1679 /* SearchLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchLocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				5316CC981ADC8E1800E65D92 /* LaunchScreen.xib */,
 				5316CC8D1ADC8E1800E65D92 /* Supporting Files */,
 				5316CCAF1ADC8EBD00E65D92 /* HomeViewController.swift */,
+				535AC02E1ADD930B000A1679 /* SearchLocationViewController.swift */,
 			);
 			path = ChoosyNewsy;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				535AC02F1ADD930B000A1679 /* SearchLocationViewController.swift in Sources */,
 				5316CC901ADC8E1800E65D92 /* AppDelegate.swift in Sources */,
 				5316CCB01ADC8EBD00E65D92 /* HomeViewController.swift in Sources */,
 			);
@@ -407,6 +411,7 @@
 				5316CCAB1ADC8E1800E65D92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5316CCAC1ADC8E1800E65D92 /* Build configuration list for PBXNativeTarget "ChoosyNewsyTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +420,7 @@
 				5316CCAE1ADC8E1800E65D92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
