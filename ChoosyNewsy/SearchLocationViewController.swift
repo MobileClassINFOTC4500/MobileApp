@@ -2,7 +2,7 @@
 //  SearchLocationViewController.swift
 //  ChoosyNewsy
 //
-//  Created by Tim Gilman on 4/14/15.
+//  Created by Tim Gilman on 4/21/15.
 //  Copyright (c) 2015 Tim Gilman. All rights reserved.
 //
 
@@ -21,9 +21,6 @@ class SearchLocationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func backButton(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
 
     /*
     // MARK: - Navigation
