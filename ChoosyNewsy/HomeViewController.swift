@@ -9,9 +9,11 @@
 import UIKit
 import CoreLocation
 
-class HomeViewController: UIViewController, CLLocationManagerDelegate {
+class HomeViewController: UITableViewController, NSXMLParserDelegate, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var navBar: UINavigationBar!
+    
+    @IBOutlet weak var articleTableView: UITableView!
     
     let locationManager = CLLocationManager()
     
@@ -19,25 +21,49 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var sliderLabel: UILabel!
     
+    var feed : NSArray = []
+    var url: NSURL = NSURL ()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-            
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
-
         
-        // Do any additional setup after loading the view.
+        self.tableView.rowHeight = 70
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        
+        url = NSURL(string: "http://www1.skysports.com/rss/11661")!
+        
+        parseRSS(url)
+        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.articleTableView.addSubview(refreshControl!)
+        self.refreshControl!.endRefreshing()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    func refresh(sender:AnyObject)
+    {
+        self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
     }
 
+
+    func parseRSS(data: NSURL) {
+        var parse : XmlParserManager = XmlParserManager.alloc().initWithURL(data) as XmlParserManager
+        feed = parse.feed
+        articleTableView.reloadData()
+    }
+    
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         
@@ -107,14 +133,39 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         println("Go to favorite page")
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
-    */
-
+    
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return feed.count
+    }
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
+        var dictionary : NSDictionary! = feed.objectAtIndex(indexPath.row).objectForKey("title") as NSDictionary
+        cell.textLabel?.text = feed.objectAtIndex(indexPath.row).objectForKey("title") as? String
+        cell.detailTextLabel?.text = feed.objectAtIndex(indexPath.row).objectForKey("date") as? String
+        return cell
+        
+    }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            // handle delete (by removing the data from your array and updating the tableview)
+ 
+            if let tv=self.tableView
+            {
+                feed.removeAtIndex(indexPath!.row) //Fix this
+                tv.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                
+            }
+        }
+    }
 }

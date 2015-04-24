@@ -13,6 +13,8 @@
 		5316CC9A1ADC8E1800E65D92 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5316CC981ADC8E1800E65D92 /* LaunchScreen.xib */; };
 		5316CCA61ADC8E1800E65D92 /* ChoosyNewsyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5316CCA51ADC8E1800E65D92 /* ChoosyNewsyTests.swift */; };
 		5316CCB01ADC8EBD00E65D92 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5316CCAF1ADC8EBD00E65D92 /* HomeViewController.swift */; };
+		535AC0801AE6C32E000A1679 /* SearchLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AC07F1AE6C32E000A1679 /* SearchLocationViewController.swift */; };
+		B79790B11AE81D0800C8E541 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79790B01AE81D0800C8E541 /* FavoritesViewController.swift */; };
 		B7EA55601AE06C4600A4EBDA /* RSSParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EA555F1AE06C4600A4EBDA /* RSSParser.swift */; };
 		B7EA55621AE0743C00A4EBDA /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EA55611AE0743C00A4EBDA /* WebViewViewController.swift */; };
 		B7EA55641AE0750100A4EBDA /* RSSFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EA55631AE0750100A4EBDA /* RSSFeedViewController.swift */; };
@@ -39,6 +41,8 @@
 		5316CCA41ADC8E1800E65D92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5316CCA51ADC8E1800E65D92 /* ChoosyNewsyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosyNewsyTests.swift; sourceTree = "<group>"; };
 		5316CCAF1ADC8EBD00E65D92 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		535AC07F1AE6C32E000A1679 /* SearchLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchLocationViewController.swift; sourceTree = "<group>"; };
+		B79790B01AE81D0800C8E541 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		B7EA555F1AE06C4600A4EBDA /* RSSParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSParser.swift; sourceTree = "<group>"; };
 		B7EA55611AE0743C00A4EBDA /* WebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
 		B7EA55631AE0750100A4EBDA /* RSSFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSSFeedViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +96,8 @@
 				B7EA555F1AE06C4600A4EBDA /* RSSParser.swift */,
 				B7EA55611AE0743C00A4EBDA /* WebViewViewController.swift */,
 				B7EA55631AE0750100A4EBDA /* RSSFeedViewController.swift */,
+				535AC07F1AE6C32E000A1679 /* SearchLocationViewController.swift */,
+				B79790B01AE81D0800C8E541 /* FavoritesViewController.swift */,
 			);
 			path = ChoosyNewsy;
 			sourceTree = "<group>";
@@ -223,7 +229,9 @@
 			files = (
 				5316CC901ADC8E1800E65D92 /* AppDelegate.swift in Sources */,
 				B7EA55601AE06C4600A4EBDA /* RSSParser.swift in Sources */,
+				B79790B11AE81D0800C8E541 /* FavoritesViewController.swift in Sources */,
 				B7EA55621AE0743C00A4EBDA /* WebViewViewController.swift in Sources */,
+				535AC0801AE6C32E000A1679 /* SearchLocationViewController.swift in Sources */,
 				B7EA55641AE0750100A4EBDA /* RSSFeedViewController.swift in Sources */,
 				5316CCB01ADC8EBD00E65D92 /* HomeViewController.swift in Sources */,
 			);
