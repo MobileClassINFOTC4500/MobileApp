@@ -7,32 +7,61 @@
 //
 
 import UIKit
+import MapKit
 
-class SearchLocationViewController: UIViewController {
+class SearchLocationViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
 
+    @IBOutlet weak var locationTableView: UITableViewCell!
+    
+    let locations = ["Columbia", "St. Louis", "Kansas City", "Springfield"] //Add more locations
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return locations.count
+    }
+    
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("LocationCell", forIndexPath: indexPath) as UITableViewCell
+        cell.textLabel?.text = locations[indexPath.row]
+        return cell
+    }
+    
+    func setLocation(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
+        var location = "\(cell.textLabel?.text)"
+        if location = "Columbia" {
+            var latitude: CLLocationDegrees = 38.761474 //Change to be correct coordinates
+            var longitude:CLLocationDegrees = -91.780938
+        }
+        else if location = "St. Louis" {
+            var latitude: CLLocationDegrees = 38.761474 //Change to be correct coordinates
+
+            var longitude:CLLocationDegrees = -91.780938
+        }
+        else if location = "Kansas City" {
+            var latitude: CLLocationDegrees = 38.761474 //Change to be correct coordinates
+            var longitude:CLLocationDegrees = -91.780938
+        }
+        else if location = "Springfield" {
+            var latitude: CLLocationDegrees = 38.761474 //Change to be correct coordinates
+
+            var longitude:CLLocationDegrees = -91.780938
+        }
     }
     
     @IBAction func backButton(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
 }

@@ -8,14 +8,20 @@
 
 import UIKit
 import CoreLocation
+import Foundation
 
-class HomeViewController: UITableViewController, NSXMLParserDelegate, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate {
+class HomeViewController: UITableViewController, CLLocationManagerDelegate, UITableViewDataSource, UITableViewDelegate, NSXMLParserDelegate {
 
     @IBOutlet weak var navBar: UINavigationBar!
     
     @IBOutlet weak var articleTableView: UITableView!
     
     let locationManager = CLLocationManager()
+    
+    var parser: RSSParser = RSSParser()
+    
+    var lat: CLLocationDegrees!
+    var lon: CLLocationDegrees!
     
     @IBOutlet weak var radiusSlider: UISlider!
     
@@ -27,24 +33,35 @@ class HomeViewController: UITableViewController, NSXMLParserDelegate, CLLocation
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        locationManager.requestWhenInUseAuthorization()
         self.locationManager.delegate = self
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.startUpdatingLocation()
         
+        var currentLocation = locationManager.location
+        
         self.tableView.rowHeight = 70
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
-        url = NSURL(string: "http://www1.skysports.com/rss/11661")!
+        var radiusVal = sliderLabel.text
+        var radiusStr = NSString(format: "%f", radiusVal!)
         
-        parseRSS(url)
+        let httpPrefix = "http://"
+        let xmlFeed = "babbage.cs.missouri.edu/~tlw44f/index.php/apiServer/sources/?latitude="
+        let appendURL = "\(currentLocation.coordinate.latitude)" + "&longitude" + "\(currentLocation.coordinate.longitude)" + "&radius=" + radiusStr
+        let finalURL = httpPrefix + xmlFeed + appendURL
+        let parseURL = NSURL(fileURLWithPath: finalURL)
+        
+        parseRSS(parseURL!)
         
         self.refreshControl = UIRefreshControl()
         self.refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
         self.refreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.articleTableView.addSubview(refreshControl!)
         self.refreshControl!.endRefreshing()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,46 +74,32 @@ class HomeViewController: UITableViewController, NSXMLParserDelegate, CLLocation
         self.refreshControl?.endRefreshing()
     }
 
-
+    
     func parseRSS(data: NSURL) {
-        var parse : XmlParserManager = XmlParserManager.alloc().initWithURL(data) as XmlParserManager
+        var parse : XMLParserManager = XmlParserManager.alloc().initWithURL(data) as! XmlParserManager
         feed = parse.feed
         articleTableView.reloadData()
     }
     
     
+    
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        
         CLGeocoder().reverseGeocodeLocation(manager.location, completionHandler: { (placemarks, error) -> Void in
-
             if (error != nil) {
                 println("Error:" + error.localizedDescription)
-        
                 return
-                
             }
-            
             if placemarks.count > 0 {
-                
                 let pm = placemarks[0] as CLPlacemark
-                
                 self.displayLocationInfo(pm)
-                
                 self.navBar.topItem?.title = self.displayLocationTitle(pm)
-                
-                
-            }else {
-                
+            } else {
                 println("Error with data")
-                
             }
-            
         })
-        
     }
     
-    func displayLocationTitle(placemark: CLPlacemark) -> String
-    {
+    func displayLocationTitle(placemark: CLPlacemark) -> String {
         return placemark.locality + ", " + placemark.administrativeArea
     }
     
@@ -117,7 +120,6 @@ class HomeViewController: UITableViewController, NSXMLParserDelegate, CLLocation
     @IBAction func showRadius(sender: AnyObject) {
         var currentValue = radiusSlider.value
         sliderLabel.text = String(format: "%.0f", currentValue) + " miles"
-    
     }
 
     @IBAction func searchLocation(sender: AnyObject) {
@@ -143,7 +145,7 @@ class HomeViewController: UITableViewController, NSXMLParserDelegate, CLLocation
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("LocationCell", forIndexPath: indexPath) as UITableViewCell
         var dictionary : NSDictionary! = feed.objectAtIndex(indexPath.row).objectForKey("title") as NSDictionary
         cell.textLabel?.text = feed.objectAtIndex(indexPath.row).objectForKey("title") as? String
         cell.detailTextLabel?.text = feed.objectAtIndex(indexPath.row).objectForKey("date") as? String
@@ -155,7 +157,7 @@ class HomeViewController: UITableViewController, NSXMLParserDelegate, CLLocation
         return true
     }
     
-    
+    /*
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.Delete) {
             // handle delete (by removing the data from your array and updating the tableview)
@@ -166,6 +168,18 @@ class HomeViewController: UITableViewController, NSXMLParserDelegate, CLLocation
                 tv.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
                 
             }
+        }
+    }
+    */
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showHomeWebView" {
+            var indexPath: NSIndexPath = self.tableView.indexPathForSelectedRow()!
+            let selectedFeedTitle: String = feed[indexPath.row].objectForKey("title") as String
+            let selectedFeedContent: String = feed[indexPath.row].objectForKey("url") as String
+            let destinationViewController = segue.destinationViewController as WebViewViewController
+            distinationViewController.title = selectedFeedTitle
+            destinationViewController.url = selectedFeedContent
         }
     }
 }

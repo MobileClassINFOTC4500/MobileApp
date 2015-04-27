@@ -13,7 +13,7 @@ class FavoritesViewController: UITableViewController, UITableViewDataSource, UIT
     var feed = []
     
     var url : NSURL = NSURL()
-    var selectedURL: url?
+    
     
     //@IBOutlet for favoritesTableView
     
@@ -60,17 +60,27 @@ class FavoritesViewController: UITableViewController, UITableViewDataSource, UIT
             
             if let tv=self.tableView
             {
-                feed.removeAtIndex(indexPath!.row) //Fix this
+                //feed.removeAtIndex(indexPath!.row) //Fix this
                 tv.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
                 
             }
         }
         
-        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject) {
+       
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "showFavoritesWebView" {
+            var indexPath: NSIndexPath = self.tableView.indexPathForSelectedRow()!
+            let selectedFeedTitle: String = feed[indexPath.row].objectForKey("title") as String
+            let selectedFeedContent: String = feed[indexPath.row].objectForKey("url") as String
             let destinationViewController = segue.destinationViewController as WebViewViewController
-            destinationViewController.url = selectedURL
+            destinationViewController.title = selectedFeedTitle
+            destinationViewController.url = selectedFeedContent
         }
-        
-        //Need segues to return as usual
-
+    }
+    
+    @IBAction func backButton(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 }
