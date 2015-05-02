@@ -1,28 +1,36 @@
 //
-//  HistoryViewController.swift
+//  CityHistoryViewController.swift
 //  ChoosyNewsy
 //
-//  Created by Evan Gibler on 4/26/15.
+//  Created by Evan Gibler on 5/1/15.
 //  Copyright (c) 2015 Tim Gilman. All rights reserved.
 //
 
 import UIKit
-import Foundation
 
-class HistoryViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+class CityHistoryViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
+
+    @IBOutlet weak var CityArticleTableView: UITableView!
     
-    @IBOutlet weak var HistoryTableView: UITableView!
+    var articles = ["google.com", "bing.com", "weather.com"]
     
-    var cities = ["Columbia", "St. Louis", "Kansas City", "Springfield"]
-    var articleNum = ["3", "1", "2", "3"]
+    class selectedArticle {
+        var url: String = ""
+    }
+    
+    var articleURL = selectedArticle()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
+    
     
     @IBAction func backButton(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
@@ -32,16 +40,16 @@ class HistoryViewController: UITableViewController, UITableViewDataSource, UITab
         return 1
     }
     
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cities.count
+        return articles.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as UITableViewCell
         
-        cell.textLabel?.text = cities[indexPath.row]
-        cell.detailTextLabel?.text = "\(articleNum[indexPath.row]) Articles"
+        cell.textLabel?.text = articles[indexPath.row]
         return cell
         
     }
@@ -51,12 +59,14 @@ class HistoryViewController: UITableViewController, UITableViewDataSource, UITab
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let selectedCity = cities[indexPath.row]
-        performSegueWithIdentifier("showCityArticles", sender: self)
+        let selectedArticle = articles[indexPath.row]
+        performSegueWithIdentifier("showHistoryWebView", sender: self)
     }
     
     func prepareForSegue(indexPath: NSIndexPath, segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destinationViewController = segue.destinationViewController as CityHistoryViewController
-        destinationViewController.title = cities[indexPath.row]
+        let destinationViewController = segue.destinationViewController as WebViewViewController
+        //destinationViewController.url = articleURL
     }
+    
+
 }

@@ -14,6 +14,7 @@
 		5316CCA61ADC8E1800E65D92 /* ChoosyNewsyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5316CCA51ADC8E1800E65D92 /* ChoosyNewsyTests.swift */; };
 		5316CCB01ADC8EBD00E65D92 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5316CCAF1ADC8EBD00E65D92 /* HomeViewController.swift */; };
 		535AC0801AE6C32E000A1679 /* SearchLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535AC07F1AE6C32E000A1679 /* SearchLocationViewController.swift */; };
+		B75DC3161AF4518300C71647 /* CityHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B75DC3151AF4518300C71647 /* CityHistoryViewController.swift */; };
 		B77A34F41AEDF26500AB9C0D /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77A34F31AEDF26500AB9C0D /* MapKit.framework */; };
 		B77A34F61AEDF30D00AB9C0D /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77A34F51AEDF30D00AB9C0D /* HistoryViewController.swift */; };
 		B79790B11AE81D0800C8E541 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79790B01AE81D0800C8E541 /* FavoritesViewController.swift */; };
@@ -44,6 +45,7 @@
 		5316CCA51ADC8E1800E65D92 /* ChoosyNewsyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosyNewsyTests.swift; sourceTree = "<group>"; };
 		5316CCAF1ADC8EBD00E65D92 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		535AC07F1AE6C32E000A1679 /* SearchLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchLocationViewController.swift; sourceTree = "<group>"; };
+		B75DC3151AF4518300C71647 /* CityHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityHistoryViewController.swift; sourceTree = "<group>"; };
 		B77A34F31AEDF26500AB9C0D /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		B77A34F51AEDF30D00AB9C0D /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		B79790B01AE81D0800C8E541 /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				535AC07F1AE6C32E000A1679 /* SearchLocationViewController.swift */,
 				B79790B01AE81D0800C8E541 /* FavoritesViewController.swift */,
 				B77A34F51AEDF30D00AB9C0D /* HistoryViewController.swift */,
+				B75DC3151AF4518300C71647 /* CityHistoryViewController.swift */,
 			);
 			path = ChoosyNewsy;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				B7EA55621AE0743C00A4EBDA /* WebViewViewController.swift in Sources */,
 				535AC0801AE6C32E000A1679 /* SearchLocationViewController.swift in Sources */,
 				B7EA55641AE0750100A4EBDA /* RSSFeedViewController.swift in Sources */,
+				B75DC3161AF4518300C71647 /* CityHistoryViewController.swift in Sources */,
 				5316CCB01ADC8EBD00E65D92 /* HomeViewController.swift in Sources */,
 				B77A34F61AEDF30D00AB9C0D /* HistoryViewController.swift in Sources */,
 			);

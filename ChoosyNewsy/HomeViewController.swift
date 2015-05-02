@@ -41,10 +41,6 @@ class HomeViewController: UITableViewController, CLLocationManagerDelegate, UITa
         
         var currentLocation = locationManager.location
         
-        self.tableView.rowHeight = 70
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
-        
         var radiusVal = sliderLabel.text
         var radiusStr = NSString(format: "%f", radiusVal!)
         
@@ -54,7 +50,7 @@ class HomeViewController: UITableViewController, CLLocationManagerDelegate, UITa
         let finalURL = httpPrefix + xmlFeed + appendURL
         let parseURL = NSURL(fileURLWithPath: finalURL)
         
-        parseRSS(parseURL!)
+        //parseRSS(parseURL!)
         
         self.refreshControl = UIRefreshControl()
         self.refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refresh")
@@ -75,11 +71,11 @@ class HomeViewController: UITableViewController, CLLocationManagerDelegate, UITa
     }
 
     
-    func parseRSS(data: NSURL) {
+    /*func parseRSS(data: NSURL) {
         var parse : XMLParserManager = XmlParserManager.alloc().initWithURL(data) as! XmlParserManager
         feed = parse.feed
         articleTableView.reloadData()
-    }
+    }*/
     
     
     
@@ -178,7 +174,7 @@ class HomeViewController: UITableViewController, CLLocationManagerDelegate, UITa
             let selectedFeedTitle: String = feed[indexPath.row].objectForKey("title") as String
             let selectedFeedContent: String = feed[indexPath.row].objectForKey("url") as String
             let destinationViewController = segue.destinationViewController as WebViewViewController
-            distinationViewController.title = selectedFeedTitle
+            //distinationViewController.title = selectedFeedTitle
             destinationViewController.url = selectedFeedContent
         }
     }

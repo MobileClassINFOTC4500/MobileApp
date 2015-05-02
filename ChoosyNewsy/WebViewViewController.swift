@@ -10,7 +10,7 @@ import UIKit
 
 class WebViewViewController: UIViewController {
 
-    let url = "" //Initially set URL to empty string
+    var url: String = "" //Initially set URL to empty string
     
     @IBOutlet weak var WebView: UIWebView!
     
