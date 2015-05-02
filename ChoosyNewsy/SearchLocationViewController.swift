@@ -11,8 +11,7 @@ import MapKit
 
 class SearchLocationViewController: UITableViewController, UITableViewDataSource, UITableViewDelegate {
 
-    
-    @IBOutlet weak var citiesTableView: UITableViewCell!
+    @IBOutlet weak var citiesTableView: UITableView!
     
     let locations = ["Columbia", "St. Louis", "Kansas City", "Springfield"] //Add more locations
     

@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChoosyNewsy/HomeViewController.swift"
-            timestampString = "451332071.545203"
+            timestampString = "452223443.954463"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "displayLocationInfo(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ChoosyNewsy/HomeViewController.swift"
-            timestampString = "451798795.840381"
+            timestampString = "452223443.954463"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
@@ -191,6 +191,78 @@
             endingLineNumber = "12"
             landmarkName = "WebViewViewController"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ChoosyNewsy.WebViewViewController.url.getter : Swift.String"
+                  moduleName = "ChoosyNewsy"
+                  urlString = "file:///Users/_egibs/Documents/MobileApp/ChoosyNewsy/WebViewViewController.swift"
+                  timestampString = "452223444.30927"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ChoosyNewsy.WebViewViewController.url.materializeForSet : Swift.String"
+                  moduleName = "ChoosyNewsy"
+                  urlString = "file:///Users/_egibs/Documents/MobileApp/ChoosyNewsy/WebViewViewController.swift"
+                  timestampString = "452223444.309924"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ChoosyNewsy.WebViewViewController.init (ChoosyNewsy.WebViewViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; ChoosyNewsy.WebViewViewController"
+                  moduleName = "ChoosyNewsy"
+                  urlString = "file:///Users/_egibs/Documents/MobileApp/ChoosyNewsy/WebViewViewController.swift"
+                  timestampString = "452223444.310387"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "45">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ChoosyNewsy.WebViewViewController.init (ChoosyNewsy.WebViewViewController.Type)() -&gt; ChoosyNewsy.WebViewViewController"
+                  moduleName = "ChoosyNewsy"
+                  urlString = "file:///Users/_egibs/Documents/MobileApp/ChoosyNewsy/WebViewViewController.swift"
+                  timestampString = "452223444.31057"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "34">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ChoosyNewsy.WebViewViewController.init (ChoosyNewsy.WebViewViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; ChoosyNewsy.WebViewViewController"
+                  moduleName = "ChoosyNewsy"
+                  urlString = "file:///Users/_egibs/Documents/MobileApp/ChoosyNewsy/WebViewViewController.swift"
+                  timestampString = "452223444.310745"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "38">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
